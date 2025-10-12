@@ -1,0 +1,9 @@
+{
+    "name": "glportfolio",
+    "private": true,
+    "version": "0.1.0",
+    "description": "Portfolio con Vue 3 (CDN) + Router + SCSS sin build (Node 12)",
+    "scripts": {
+    "dev": "echo 'Usa VS Code Live Server o cualquier servidor estático'"
+    }
+    }

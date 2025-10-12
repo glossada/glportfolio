@@ -1,0 +1,6 @@
+# Node/Editor
+node_modules/
+.DS_Store
+.vscode/
+.env
+*.log

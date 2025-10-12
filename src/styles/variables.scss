@@ -1,0 +1,61 @@
+$breakpoint-xxs: 320px;
+$breakpoint-xs: 320px;
+$breakpoint-s: 411px;
+$breakpoint-sm: 767px;
+$breakpoint-md: 1023px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1400px;
+
+
+@mixin media($media) {
+@if $media == xxs {
+@media (max-width: 359px) { @content; }
+}
+@if $media == xs {
+@media (max-width: $breakpoint-sm) { @content; }
+}
+@else if $media == s {
+@media (min-width: $breakpoint-s) and (max-width: $breakpoint-sm) { @content; }
+}
+@else if $media == sm {
+@media (min-width: $breakpoint-sm) and (max-width: 1023px) { @content; }
+}
+@else if $media == md {
+@media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) { @content; }
+}
+@else if $media == lg {
+@media (min-width: $breakpoint-lg) { @content; }
+}
+@else if $media == xl {
+@media (min-width: $breakpoint-xl) { @content; }
+}
+@if $media == dsk {
+@media (min-width: $breakpoint-md) { @content; }
+}
+}
+
+
+// Fuentes
+$fontBlack: 'SourceSansPro';
+$sourceBold: 'SourceSansPro';
+$sourceSemiBold: 'SourceSansPro';
+$fontRegular: 'SourceSansPro';
+$fontRegularI: 'SourceSansPro';
+$fontLight: 'SourceSansPro';
+$montserratBold: 'Montserrat';
+$montserratRegular: 'Montserrat';
+$montserratSemiBold: 'Montserrat';
+$montserratExtraBold: 'Montserrat';
+$montserratMedium: 'Montserrat';
+$robotoBold: 'RobotoBold';
+$museoRegular: 'MuseoRegular';
+$arialRoundedBold: 'ArialRoundedBold';
+$sourceSansPro: 'SourceSansPro';
+$saintRegusBold: 'SaintRegusBold';
+
+
+// Colores de ejemplo
+$primary: #5b7cff;
+$bg: #0f1220;
+$text: #e7e9f5;
+$radius: 14px;
