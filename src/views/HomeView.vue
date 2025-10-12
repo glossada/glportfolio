@@ -1,5 +1,5 @@
 <template>
-    <section class="home">
+    <section class="home mainContent">
         <h1>¡Hola! Soy {{ nombre }}</h1>
         <p>Portfolio con <strong>Vue 3 + Router</strong>, estilos en <code>src/styles</code> (SCSS), sin build.</p>
 

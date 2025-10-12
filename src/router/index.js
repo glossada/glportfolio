@@ -20,7 +20,7 @@ document.head.appendChild(style);
 
 
 const Home = () => loadModule('/src/views/HomeView.vue', SFC_OPTIONS);
-const About = () => loadModule('/src/views/AboutView.vue', SFC_OPTIONS);
+const ExperienceView = () => loadModule('/src/views/ExperienceView.vue', SFC_OPTIONS);
 const NotFound = () => loadModule('/src/views/NotFoundView.vue', SFC_OPTIONS);
 
 
@@ -28,7 +28,7 @@ export const router = createRouter({
 history: createWebHistory(),
 routes: [
 { path: '/', component: Home },
-{ path: '/about', component: About },
+{ path: '/experience', component: ExperienceView },
 { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 ]
 });

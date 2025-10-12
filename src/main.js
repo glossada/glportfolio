@@ -71,20 +71,20 @@ async function compileGlobalSCSS() {
     
     
     // App raíz mínima (header + router-view)
-    const { createApp } = window.Vue;
+    const { createApp, defineAsyncComponent } = window.Vue;
+    const loader = window['vue3-sfc-loader'] || window.vue3SfcLoader;
     const App = {
-    template: `
-    <header class="site-header">
-    <nav class="nav">
-    <router-link to="/">Home</router-link>
-    <span> · </span>
-    <router-link to="/about">About</router-link>
-    </nav>
-    </header>
-    <main class="container">
-    <router-view />
-    </main>
-    `
+      components: {
+        NavBar: defineAsyncComponent(() =>
+          loader.loadModule('/src/components/NavBar.vue', window.SFC_OPTIONS)
+        )
+      },
+      template: `
+        <NavBar />
+        <main class="container content mainContent">
+          <router-view />
+        </main>
+      `
     };
     
     
