@@ -1,6 +1,7 @@
 <template>
     <nav class="navbar" role="navigation" aria-label="Main">
-      <h2 class="navbar__title">glportfolio</h2>
+      <img class="navbar__photo" src="/public/images/mainphoto.png" alt="Foto principal" />
+      <h2 class="navbar__title">Programador Fullstack</h2>
   
       <router-link to="/" class="navbar__btn" active-class="is-active" exact>
         About me

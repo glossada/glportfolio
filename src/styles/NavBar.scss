@@ -7,8 +7,10 @@
   height: 100vh;
   padding: 1rem;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   gap: .75rem;
+  align-items: center;
 
   /* fondo y borde (ajusta a tu paleta) */
   background: rgba(15, 18, 32, .9);
@@ -29,18 +31,23 @@
   align-items: center;
   justify-content: center;
   min-height: 40px;
-  border-radius: 12px;
   text-decoration: none;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.04);
   color: #fff;
   padding: .5rem .75rem;
   transition: transform .15s, background .15s, border-color .15s, box-shadow .15s;
 
-  &:hover { transform: translateY(-1px); }
-  &.is-active {
+  &:hover {
     background: #5b7cff;
     border-color: transparent;
     box-shadow: 0 10px 25px rgba(91,124,255,.35);
+    transform: skewX(10deg) scale(1.3);
+    width: 50%;
+    color: white !important;
+  }
+
+  &.is-active {
+    width: 50%;
+    transform: skewX(10deg) scale(1.3);
+    color: #5b7cff;
   }
 }
