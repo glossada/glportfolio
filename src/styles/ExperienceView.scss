@@ -2,4 +2,37 @@
 
 .about {
     opacity: .95;
+    margin-left: 20%;
+
+    h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 1rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .enterpriseTitle {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 1rem;
+
+        img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        h2 {
+            a {
+                font-size: 2rem;
+                font-weight: 600;
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
 }
