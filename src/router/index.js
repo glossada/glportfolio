@@ -1,4 +1,4 @@
-const { createRouter, createWebHistory } = window.VueRouter;
+const { createRouter, createWebHashHistory } = window.VueRouter;
 const loaderGlobal = window['vue3-sfc-loader'] || window.vue3SfcLoader;
 const { loadModule } = loaderGlobal;
 
@@ -25,10 +25,36 @@ const NotFound = () => loadModule('/src/views/NotFoundView.vue', SFC_OPTIONS);
 
 
 export const router = createRouter({
-history: createWebHistory(),
+history: createWebHashHistory(),
 routes: [
 { path: '/', component: Home },
 { path: '/experience', component: ExperienceView },
 { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
-]
+],
+scrollBehavior(to, _from, savedPosition) {
+// Si hay un hash en la URL (ancla), scroll a ese elemento
+if (to.hash) {
+return new Promise((resolve) => {
+// Pequeño delay para asegurar que el DOM esté listo
+setTimeout(() => {
+const element = document.querySelector(to.hash);
+if (element) {
+resolve({
+el: to.hash,
+behavior: 'smooth',
+top: 80 // Offset para compensar navbar fijo si existe
+});
+} else {
+resolve({ top: 0 });
+}
+}, 100);
+});
+}
+// Si hay posición guardada (navegación back/forward), restaurarla
+if (savedPosition) {
+return savedPosition;
+}
+// Por defecto, scroll al inicio
+return { top: 0 };
+}
 });

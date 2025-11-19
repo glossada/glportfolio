@@ -2,37 +2,283 @@
 
 .about {
     opacity: .95;
-    margin-left: 20%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 3rem;
 
+    // Título principal
     h1 {
-        font-size: 3.5rem;
+        font-size: clamp(2.5rem, 5vw, 5rem);
         font-weight: 700;
-        color: white;
-        margin-bottom: 1rem;
+        color: $text;
+        margin: 0 0 3rem;
         text-align: center;
         text-transform: uppercase;
+        animation: Title 0.6s ease 0s 1 normal forwards;
+        text-shadow: 0 2px 4px rgba(#000, 0.3);
+
+        @keyframes Title {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     }
 
+    // Título de empresa
     .enterpriseTitle {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 1rem;
-        margin-top: 1rem;
+        margin-bottom: 2.5rem;
 
         img {
             width: 80px;
             height: 80px;
             border-radius: 8px;
             object-fit: cover;
+            flex-shrink: 0;
         }
 
         h2 {
+            font-size: clamp(1.25rem, 2vw, 1.875rem);
+            margin: 0;
+
             a {
-                font-size: 2rem;
+                font-size: inherit;
                 font-weight: 600;
-                color: white;
+                color: $text;
                 text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                transition: transform .2s, color .2s;
+
+                &:hover {
+                    transform: scale(1.05);
+                    color: $primary;
+                }
             }
+        }
+    }
+
+    // Párrafo introductorio
+    > div:not([class]) {
+        margin-bottom: 3rem;
+
+        p {
+            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            line-height: 1.6;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            color: $text-light;
+
+            a {
+                color: $primary;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 2px solid rgba($primary, 0.3);
+                transition: all 0.3s ease;
+                padding-bottom: 2px;
+
+                &:hover {
+                    color: $accent;
+                    border-bottom-color: $accent;
+                    text-shadow: 0 0 10px rgba($accent, 0.5);
+                }
+            }
+        }
+    }
+
+    // Secciones (Back-end, Front-end, Event, Extra)
+    .backEndSection,
+    .BackOfficeSection,
+    .EventSection,
+    .ExtraSection {
+        margin-bottom: 0;
+        margin-left: -3rem;
+        margin-right: -3rem;
+        padding: 3rem 3rem;
+        border-top: 2px solid rgba($primary, 0.15);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        h3 {
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            margin: 0 0 1.5rem;
+            font-weight: 600;
+            color: $accent;
+            text-shadow: 0 2px 4px rgba(#000, 0.3);
+        }
+
+        > p {
+            font-size: clamp(1.25rem, 2vw, 1.875rem);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            color: $text-light;
+        }
+
+        ul {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+            max-width: 900px;
+
+            li {
+                font-size: clamp(0.9rem, 1.2vw, 1.0625rem);
+                line-height: 1.7;
+                margin-bottom: 0.75rem;
+                color: $text;
+
+                strong {
+                    font-size: 1.1em;
+                    color: $primary;
+                }
+            }
+        }
+
+        > p:last-of-type {
+            margin-top: 1.5rem;
+            font-size: clamp(0.95rem, 1.3vw, 1.0625rem);
+            color: $text-light;
+        }
+    }
+
+    // Colores específicos por sección
+    .backEndSection {
+        background: $section-backend;
+    }
+
+    .BackOfficeSection {
+        background: $section-backoffice;
+    }
+
+    .EventSection {
+        background: $section-event;
+    }
+
+    .ExtraSection {
+        background: $section-extra;
+    }
+
+    // Sección Back Office específica
+    .BackOfficeSection {
+        .pulipImg {
+            width: clamp(150px, 20vw, 180px);
+            display: block;
+            margin: 1rem 0 1.5rem;
+            border-radius: 8px;
+
+            &:hover {
+                transform: scale(1.05);
+                transition: transform .2s;
+            }
+        }
+    }
+
+    // Sección de eventos
+    .EventSection {
+        .eventLogos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            max-width: 100%;
+
+            a {
+                text-decoration: none;
+                color: $text;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+                text-align: center;
+                flex: 1 1 calc(33.333% - 1rem);
+                min-width: 150px;
+                padding: 1rem;
+                transition: transform .2s, color .2s;
+
+                &:hover {
+                    transform: scale(1.05);
+                    color: $primary;
+                }
+
+                .eventImg {
+                    width: 80px;
+                    height: 80px;
+                    object-fit: contain;
+                    border-radius: 10px;
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+    }
+
+    // Estilos globales de texto
+    p, h2, h3, li, a {
+        font-family: 'Funnel Display', cursive;
+        text-shadow: 0 2px 4px rgba(#000, 0.3);
+    }
+
+    // Responsive
+    @include media(xs) {
+        padding: 1.5rem 1rem;
+
+        h1 {
+            margin-bottom: 2rem;
+        }
+
+        .enterpriseTitle {
+            flex-direction: column;
+            text-align: center;
+
+            img {
+                margin: 0;
+            }
+        }
+
+        .backEndSection,
+        .BackOfficeSection,
+        .EventSection,
+        .ExtraSection {
+            margin-left: -1rem;
+            margin-right: -1rem;
+            margin-bottom: 0;
+            padding: 2rem 1rem;
+        }
+
+        .EventSection .eventLogos {
+            flex-direction: column;
+            align-items: center;
+
+            a {
+                flex: 1 1 100%;
+                max-width: 250px;
+            }
+        }
+    }
+
+    @include media(sm) {
+        padding: 2rem 1.5rem;
+
+        .backEndSection,
+        .BackOfficeSection,
+        .EventSection,
+        .ExtraSection {
+            margin-left: -1.5rem;
+            margin-right: -1.5rem;
+            padding: 2.5rem 1.5rem;
+        }
+
+        .EventSection .eventLogos a {
+            flex: 1 1 calc(50% - 0.75rem);
         }
     }
 }

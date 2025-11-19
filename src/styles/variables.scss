@@ -54,8 +54,20 @@ $sourceSansPro: 'SourceSansPro';
 $saintRegusBold: 'SaintRegusBold';
 
 
-// Colores de ejemplo
-$primary: #5b7cff;
-$bg: #0f1220;
-$text: #e7e9f5;
+// Paleta de colores - Navy/Turquoise/Gold Theme
+$primary: #178582;        // Turquesa
+$secondary: #0A1828;      // Azul oscuro navy
+$accent: #BFA181;         // Dorado
+$success: #1FA89E;        // Turquesa claro
+$bg: #0A1828;             // Azul oscuro navy (fondo principal)
+$bg-light: #132C3F;       // Navy más claro
+$bg-dark: #050D14;        // Navy muy oscuro
+$text: #E8E9ED;           // Texto claro
+$text-light: #B8BFCC;     // Texto gris azulado claro
 $radius: 14px;
+
+// Colores para secciones
+$section-backend: rgba(23, 133, 130, 0.15);     // Turquesa
+$section-backoffice: rgba(191, 161, 129, 0.12); // Dorado
+$section-event: rgba(31, 168, 158, 0.15);       // Turquesa claro
+$section-extra: rgba(23, 133, 130, 0.2);        // Turquesa más intenso

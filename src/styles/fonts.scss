@@ -1,10 +1,138 @@
 @font-face {
+  font-family: 'Fugaz One';
+  src: url('/public/font/fugaz-one/FugazOne-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------------- Funnel Display (estáticos) ---------------- */
+
+@font-face {
+  font-family: 'Funnel Display';
+  src: url('/public/font/funnel-display/FunnelDisplay-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Funnel Display';
+  src: url('/public/font/funnel-display/FunnelDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Funnel Display';
+  src: url('/public/font/funnel-display/FunnelDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Funnel Display';
+  src: url('/public/font/funnel-display/FunnelDisplay-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Funnel Display';
+  src: url('/public/font/funnel-display/FunnelDisplay-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Funnel Display';
+  src: url('/public/font/funnel-display/FunnelDisplay-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------------- Zain ---------------- */
+
+@font-face {
+  font-family: 'Zain';
+  src: url('/public/font/zain/Zain-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zain';
+  src: url('/public/font/zain/Zain-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zain';
+  src: url('/public/font/zain/Zain-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zain';
+  src: url('/public/font/zain/Zain-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zain';
+  src: url('/public/font/zain/Zain-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zain';
+  src: url('/public/font/zain/Zain-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zain';
+  src: url('/public/font/zain/Zain-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Zain';
+  src: url('/public/font/zain/Zain-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ---------------- IcoMoon Icons ---------------- */
+
+
+@font-face {
     font-family: 'icomoon';
-    src: url('/public/icons/fonts/icomoon.eot?5j4osz');
-    src: url('/public/icons/fonts/icomoon.eot?5j4osz#iefix') format('embedded-opentype'),
-      url('/public/icons/fonts/icomoon.ttf?5j4osz') format('truetype'),
-      url('/public/icons/fonts/icomoon.woff?5j4osz') format('woff'),
-      url('/public/icons/fonts/icomoon.svg?5j4osz#icomoon') format('svg');
+    src: url('/public/icons/fonts/icomoon.eot?9313se');
+    src: url('/public/icons/fonts/icomoon.eot?9313se#iefix') format('embedded-opentype'),
+      url('/public/icons/fonts/icomoon.ttf?9313se') format('truetype'),
+      url('/public/icons/fonts/icomoon.woff?9313se') format('woff'),
+      url('/public/icons/fonts/icomoon.svg?9313se#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -26,6 +154,9 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .icon-menu:before {
+    content: "\e900";
+  }
   .icon-mail4:before {
     content: "\ea86";
   }
@@ -34,5 +165,8 @@
   }
   .icon-linkedin:before {
     content: "\eac9";
+  }
+  .icon-arrow-right2:before {
+    content: "\ea3c";
   }
   

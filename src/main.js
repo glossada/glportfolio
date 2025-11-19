@@ -68,8 +68,10 @@ async function compileGlobalSCSS() {
     import { router, SFC_OPTIONS } from './router/index.js';
     // expone opciones del loader para que las SFC puedan usarlas (p. ej., desde HomeView.vue)
     window.SFC_OPTIONS = SFC_OPTIONS;
-    
-    
+
+    // --- i18n ---
+    import { i18n } from './i18n/index.js';
+
     // App raíz mínima (header + router-view)
     const { createApp, defineAsyncComponent } = window.Vue;
     const loader = window['vue3-sfc-loader'] || window.vue3SfcLoader;
@@ -80,12 +82,14 @@ async function compileGlobalSCSS() {
         )
       },
       template: `
+          <div class="chirimboloOne"></div>
+          <div class="chirimboloTwo"></div>
         <NavBar />
         <main class="container content mainContent">
           <router-view />
         </main>
       `
     };
-    
-    
-    createApp(App).use(router).mount('#app');
+
+
+    createApp(App).use(router).use(i18n).mount('#app');
