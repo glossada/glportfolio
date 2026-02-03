@@ -28,6 +28,7 @@ export default {
   experience: {
     title: 'Working Experience',
     company: 'Digital Product Development Company',
+    workPeriod: 'March 2023 - Present',
     intro: 'I\'ve worked in the development and implementation {backend}/{frontend} of high-traffic websites: Hot Sale, Hot Fashion, Hot Travel, Cyber Days, and Glam Days in collaboration with chambers of commerce across different countries. Also worked in Pulip platform, a high-performance, high-availability and ultra-customizable marketplace for organizing online discount and events.',
     backEnd: 'Back-end',
     backEndMainServer: 'Main Server',

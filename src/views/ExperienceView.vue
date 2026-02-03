@@ -3,6 +3,7 @@
         <h1>{{ $t('experience.title') }}</h1>
         <div class="enterpriseTitle">
             <h2><a href="https://42i.co/"><img src="/public/images/42i.png" alt="42i Logo" /> - {{ $t('experience.company') }}</a></h2>
+            <p class="workPeriod">{{ $t('experience.workPeriod') }}</p>
         </div>
         <div>
             <p v-html="$t('experience.intro', {

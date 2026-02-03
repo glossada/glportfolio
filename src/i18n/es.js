@@ -28,6 +28,7 @@ export default {
   experience: {
     title: 'Experiencia Laboral',
     company: 'Empresa de Desarrollo de Productos Digitales',
+    workPeriod: 'Marzo 2023 - Presente',
     intro: 'He trabajado en el desarrollo e implementación {backend}/{frontend} de sitios web de alto tráfico: Hot Sale, Hot Fashion, Hot Travel, Cyber Days y Glam Days en colaboración con cámaras de comercio de diferentes países. También trabajé en la plataforma Pulip, un marketplace de alto rendimiento, alta disponibilidad y ultra-personalizable para organizar eventos y descuentos online.',
     backEnd: 'Back-end',
     backEndMainServer: 'Servidor Principal',

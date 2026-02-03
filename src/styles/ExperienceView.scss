@@ -32,9 +32,10 @@
     // Título de empresa
     .enterpriseTitle {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 1rem;
+        gap: 0.5rem;
         margin-bottom: 2.5rem;
 
         img {
@@ -64,6 +65,14 @@
                     color: $primary;
                 }
             }
+        }
+
+        .workPeriod {
+            font-size: clamp(0.9rem, 1.2vw, 1rem);
+            color: $accent;
+            font-style: italic;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(#000, 0.3);
         }
     }
 
