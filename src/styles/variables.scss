@@ -36,38 +36,31 @@ $breakpoint-xl: 1400px;
 
 
 // Fuentes
-$fontBlack: 'SourceSansPro';
-$sourceBold: 'SourceSansPro';
-$sourceSemiBold: 'SourceSansPro';
-$fontRegular: 'SourceSansPro';
-$fontRegularI: 'SourceSansPro';
-$fontLight: 'SourceSansPro';
-$montserratBold: 'Montserrat';
-$montserratRegular: 'Montserrat';
-$montserratSemiBold: 'Montserrat';
-$montserratExtraBold: 'Montserrat';
-$montserratMedium: 'Montserrat';
-$robotoBold: 'RobotoBold';
-$museoRegular: 'MuseoRegular';
-$arialRoundedBold: 'ArialRoundedBold';
-$sourceSansPro: 'SourceSansPro';
-$saintRegusBold: 'SaintRegusBold';
+$fontPrimary: 'Space Grotesk', sans-serif;
+$fontDisplay: 'Fugaz One', cursive;
+$fontUI: 'Funnel Display', cursive;
+
+// Variables de fuentes (legacy — apuntan a las nuevas)
+$fontBlack: 'Space Grotesk', sans-serif;
+$sourceBold: 'Space Grotesk', sans-serif;
+$fontRegular: 'Space Grotesk', sans-serif;
+$montserratBold: 'Space Grotesk', sans-serif;
 
 
-// Paleta de colores - Navy/Turquoise/Gold Theme
-$primary: #178582;        // Turquesa
-$secondary: #0A1828;      // Azul oscuro navy
-$accent: #BFA181;         // Dorado
-$success: #1FA89E;        // Turquesa claro
-$bg: #0A1828;             // Azul oscuro navy (fondo principal)
-$bg-light: #132C3F;       // Navy más claro
-$bg-dark: #050D14;        // Navy muy oscuro
-$text: #E8E9ED;           // Texto claro
-$text-light: #B8BFCC;     // Texto gris azulado claro
-$radius: 14px;
+// Paleta moderna — dark violet/amber theme
+$primary: #7c6aff;        // Violeta eléctrico
+$secondary: #0d0f1c;      // Fondo base
+$accent: #f5a623;         // Ámbar cálido
+$success: #2de0b0;        // Mint/teal
+$bg: #0d0f1c;             // Dark base
+$bg-light: #14172b;       // Panel dark
+$bg-dark: #07080f;        // Near black
+$text: #e8eaf6;           // Light text
+$text-light: #8b92b8;     // Muted text
+$radius: 12px;
 
-// Colores para secciones
-$section-backend: rgba(23, 133, 130, 0.15);     // Turquesa
-$section-backoffice: rgba(191, 161, 129, 0.12); // Dorado
-$section-event: rgba(31, 168, 158, 0.15);       // Turquesa claro
-$section-extra: rgba(23, 133, 130, 0.2);        // Turquesa más intenso
+// Colores para secciones — muy sutiles para look minimalista
+$section-backend:    rgba(124, 106, 255, 0.06);
+$section-backoffice: rgba(245, 166, 35, 0.06);
+$section-event:      rgba(45, 224, 176, 0.06);
+$section-extra:      rgba(124, 106, 255, 0.11);

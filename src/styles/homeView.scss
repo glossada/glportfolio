@@ -4,316 +4,365 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0;
-    animation: body 0.5s ease 0s 1 normal forwards;
 
-    @keyframes body {
-        0% {
-            opacity: 0;
-            transform: scale(0.6);
-        }
-        100% {
-            opacity: 1;
-            transform: scale(1);
-        }
-    }
-
-    // Sección de introducción
+    // ── Sección de introducción ──────────────────────────────────────
     .introSection {
-        padding: 3rem 3rem;
+        padding: 4rem 3rem 3rem;
+        text-align: center;
 
         h1 {
-            font-size: clamp(2.5rem, 5vw, 5rem);
-            margin: 0 0 2rem;
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            margin: 0 0 1.5rem;
             text-transform: uppercase;
-            text-align: center;
-            animation: Title 0.6s ease 0s 1 normal forwards;
-            color: $text;
-            text-shadow: 0 2px 4px rgba(#000, 0.3);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            // Gradient text
+            background: linear-gradient(135deg, $text 30%, $primary 70%, $accent 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: heroTitle 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 
-            @keyframes Title {
-                0% {
+            @keyframes heroTitle {
+                from {
                     opacity: 0;
-                    transform: translateY(-50px);
+                    transform: translateY(-32px) scale(0.95);
                 }
-                100% {
+                to {
                     opacity: 1;
-                    transform: translateY(0);
+                    transform: translateY(0) scale(1);
                 }
             }
         }
 
         p {
-            font-size: clamp(1rem, 1.5vw, 1.25rem);
-            line-height: 1.6;
+            font-size: clamp(1rem, 1.4vw, 1.2rem);
+            line-height: 1.7;
             text-align: center;
-            max-width: 900px;
+            max-width: 680px;
             margin: 0 auto;
             color: $text-light;
-        }
-    }
+            animation: fadeUp 0.7s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
 
-    // Sección de tecnologías
-    .techSection {
-        padding: 3rem 3rem;
-        margin-left: 0;
-        margin-right: 0;
-        background: $section-backend;
-        border-top: 2px solid rgba($primary, 0.15);
-
-        h2 {
-            font-size: clamp(1.5rem, 2.5vw, 1.875rem);
-            margin: 0 0 1.5rem;
-            color: $accent;
-            text-shadow: 0 2px 4px rgba(#000, 0.3);
-        }
-
-        ul {
-            max-width: 900px;
-            margin: 0 auto;
-            padding-left: 1.5rem;
-
-            li {
-                font-size: clamp(0.95rem, 1.3vw, 1.0625rem);
-                line-height: 1.8;
-                margin-bottom: 1rem;
-
-                strong {
-                    font-size: 1.15em;
-                    color: $primary;
-                }
+            @keyframes fadeUp {
+                from { opacity: 0; transform: translateY(16px); }
+                to   { opacity: 1; transform: translateY(0); }
             }
         }
     }
 
-    // Sección de educación
-    .educationSection {
-        padding: 3rem 3rem;
-        background: $section-backoffice;
-        border-top: 2px solid rgba($primary, 0.15);
+    // ── Sección de tecnologías ───────────────────────────────────────
+    .techSection {
+        padding: 3rem;
+        background: $section-backend;
+        border-top: 1px solid rgba($primary, 0.1);
+        border-bottom: 1px solid rgba($primary, 0.1);
 
         h2 {
-            font-size: clamp(1.5rem, 2.5vw, 1.875rem);
-            margin: 0 0 1.5rem;
+            font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+            margin: 0 0 2rem;
+            color: $primary;
+            font-family: $fontPrimary;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .techGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.75rem;
+            max-width: 900px;
+        }
+
+        .techCategory {
+            .techLabel {
+                font-size: 0.75rem;
+                font-weight: 600;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+                color: $accent;
+                margin: 0 0 0.75rem;
+                font-family: $fontPrimary;
+            }
+
+            .techTags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.3rem 0.75rem;
+            background: rgba($primary, 0.1);
+            border: 1px solid rgba($primary, 0.2);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: $text;
+            font-family: $fontPrimary;
+            transition: all 0.2s ease;
+            cursor: default;
+
+            &:hover {
+                background: rgba($primary, 0.22);
+                border-color: rgba($primary, 0.5);
+                color: $text;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba($primary, 0.2);
+            }
+        }
+    }
+
+    // ── Sección de educación ─────────────────────────────────────────
+    .educationSection {
+        padding: 3rem;
+        background: $section-backoffice;
+        border-bottom: 1px solid rgba($accent, 0.1);
+
+        h2 {
+            font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+            margin: 0 0 1.75rem;
             color: $accent;
-            text-shadow: 0 2px 4px rgba(#000, 0.3);
+            font-family: $fontPrimary;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
 
         .educationItem {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
 
             strong {
                 font-size: clamp(1.1rem, 1.5vw, 1.25rem);
-                color: $primary;
-                display: block;
-                margin-bottom: 0.5rem;
+                color: $text;
+                font-weight: 600;
+                font-family: $fontPrimary;
             }
 
             p {
-                font-size: clamp(0.95rem, 1.3vw, 1.0625rem);
+                font-size: clamp(0.9rem, 1.2vw, 1rem);
                 color: $text-light;
-                margin-bottom: 0.25rem;
+                margin: 0;
+                font-family: $fontPrimary;
             }
 
             .educationDate {
-                font-size: clamp(0.85rem, 1.1vw, 0.9375rem);
+                font-size: 0.85rem;
                 color: $accent;
                 font-style: italic;
             }
         }
     }
 
-    // Sección de idiomas
+    // ── Sección de idiomas ───────────────────────────────────────────
     .languagesSection {
-        padding: 3rem 3rem;
+        padding: 3rem;
         background: $section-event;
-        border-top: 2px solid rgba($primary, 0.15);
+        border-bottom: 1px solid rgba($success, 0.1);
 
         h2 {
-            font-size: clamp(1.5rem, 2.5vw, 1.875rem);
-            margin: 0 0 1.5rem;
-            color: $accent;
-            text-shadow: 0 2px 4px rgba(#000, 0.3);
+            font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+            margin: 0 0 1.75rem;
+            color: $success;
+            font-family: $fontPrimary;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
 
         ul {
-            max-width: 900px;
-            margin: 0 auto;
-            padding-left: 1.5rem;
             list-style: none;
+            padding: 0;
+            margin: 0;
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
+            max-width: 500px;
 
             li {
-                font-size: clamp(0.95rem, 1.3vw, 1.0625rem);
+                font-size: clamp(0.95rem, 1.3vw, 1.05rem);
                 color: $text-light;
+                font-family: $fontPrimary;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
 
                 strong {
-                    color: $primary;
+                    color: $text;
+                    font-weight: 600;
                 }
 
                 a {
-                    color: $primary;
+                    color: $success;
                     text-decoration: none;
-                    border-bottom: 1px solid rgba($primary, 0.3);
-                    transition: all 0.3s ease;
+                    border-bottom: 1px solid rgba($success, 0.3);
+                    transition: all 0.2s ease;
+                    padding-bottom: 1px;
 
                     &:hover {
                         color: $accent;
                         border-bottom-color: $accent;
-                        text-shadow: 0 0 10px rgba($accent, 0.5);
                     }
                 }
             }
         }
     }
 
-    // Sección de contacto
+    // ── Sección de contacto ──────────────────────────────────────────
     .contactSection {
-        padding: 3rem 3rem;
+        padding: 3rem;
         background: $section-backend;
-        border-top: 2px solid rgba($primary, 0.15);
+        border-bottom: 1px solid rgba($primary, 0.1);
 
         .contactContainer {
-            margin: 0;
-            padding: 0;
-            border: none;
-            box-shadow: none;
-
             h2 {
-                font-size: clamp(1.5rem, 2.5vw, 1.875rem);
+                font-size: clamp(1.1rem, 1.8vw, 1.3rem);
                 margin: 0 0 2rem;
-                color: $accent;
-                text-shadow: 0 2px 4px rgba(#000, 0.3);
+                color: $primary;
+                font-family: $fontPrimary;
+                font-weight: 600;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
             }
 
             .contactBtns {
                 display: flex;
                 flex-direction: column;
-                gap: 1.25rem;
-                max-width: 600px;
-                margin: 0 auto;
+                gap: 0.75rem;
+                max-width: 420px;
 
                 a {
-                    color: $text;
+                    color: $text-light;
                     text-decoration: none;
-                    font-size: clamp(1.125rem, 1.5vw, 1.5rem);
-                    width: fit-content;
-                    padding: 0.5rem 1rem;
+                    font-size: clamp(0.9rem, 1.2vw, 1rem);
+                    font-family: $fontPrimary;
+                    font-weight: 500;
+                    padding: 0.6rem 1rem;
+                    border-radius: 10px;
+                    border: 1px solid rgba($primary, 0.15);
                     display: flex;
                     align-items: center;
                     gap: 0.75rem;
-                    transition: transform .15s, background .15s, border-color .15s, box-shadow .15s, color .15s;
+                    transition: all 0.25s ease;
+                    background: rgba($bg-light, 0.3);
 
                     i {
-                        font-size: 1.2em;
+                        font-size: 1.1em;
+                        color: $primary;
+                        width: 20px;
+                        text-align: center;
                     }
 
                     &:hover {
-                        background: $primary;
-                        border-color: transparent;
-                        box-shadow: 0 0 25px rgba($primary, 0.8);
-                        transform: skewX(10deg);
-                        color: white !important;
+                        background: rgba($primary, 0.12);
+                        border-color: rgba($primary, 0.4);
+                        color: $text;
+                        transform: translateX(4px);
+                        box-shadow: 0 4px 16px rgba($primary, 0.15);
+
+                        i {
+                            color: $accent;
+                        }
                     }
                 }
             }
         }
     }
 
-    // Sección de experiencia
+    // ── Sección de experiencia (CTA) ─────────────────────────────────
     .experienceSection {
-        padding: 3rem 3rem;
+        padding: 4rem 3rem;
         background: $section-extra;
-        border-top: 2px solid rgba($primary, 0.15);
+        text-align: center;
 
         .jumpToExperience {
             display: flex;
             justify-content: center;
-            padding: 0;
-            margin: 0;
 
             .jumpToExperienceBtn {
-                display: flex;
-                justify-content: center;
+                display: inline-flex;
                 align-items: center;
-                width: 100%;
-                max-width: 460px;
-                min-height: 60px;
+                justify-content: center;
+                border-radius: 50px;
                 background: $primary;
-                border-color: transparent;
-                box-shadow: 0 0 30px rgba($primary, 0.6);
-                transform: skewX(10deg);
-                transition: transform .15s, background .15s, border-color .15s, box-shadow .15s;
+                border: none;
+                box-shadow: 0 8px 30px rgba($primary, 0.4);
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 14px 40px rgba($primary, 0.55), 0 0 60px rgba($accent, 0.15);
+                }
 
                 .experienceBtn {
                     color: white;
                     text-decoration: none;
-                    font-size: clamp(1.25rem, 2vw, 1.5625rem);
-                    text-shadow: none;
-                    padding: 1rem 2rem;
-                    display: block;
+                    font-size: clamp(1rem, 1.5vw, 1.2rem);
+                    font-family: $fontPrimary;
+                    font-weight: 600;
+                    letter-spacing: 0.04em;
+                    padding: 1rem 2.5rem;
+                    display: flex;
+                    align-items: center;
+                    gap: 0.6rem;
+
+                    i {
+                        transition: transform 0.25s ease;
+                    }
                 }
 
-                &:hover {
-                    transform: skewX(10deg) scale(1.1);
-                    box-shadow: 0 0 40px rgba($primary, 0.8), 0 0 60px rgba($accent, 0.3);
+                &:hover .experienceBtn i {
+                    transform: translateX(4px);
                 }
             }
         }
     }
 
-    // Estilos globales de texto
+    // ── Estilos globales de texto ────────────────────────────────────
     p, h2, h3, li, a {
-        font-family: 'Funnel Display', cursive;
-        text-shadow: 0 2px 4px rgba(#000, 0.3);
+        font-family: $fontPrimary;
     }
 
-    // Responsive
+    // ── Responsive ───────────────────────────────────────────────────
     @include media(xs) {
-        .introSection,
+        .introSection {
+            padding: 2.5rem 1.25rem 2rem;
+        }
+
         .techSection,
         .educationSection,
         .languagesSection,
         .contactSection,
         .experienceSection {
-            padding: 2rem 1rem;
+            padding: 2rem 1.25rem;
         }
 
-        .introSection {
-            h1 {
-                margin-bottom: 1.5rem;
-            }
-        }
-
-        .contactSection .contactContainer {
-            .contactBtns {
-                align-items: center;
-            }
-        }
-
-        .experienceSection .jumpToExperience {
-            .jumpToExperienceBtn {
-                max-width: 100%;
-                min-height: 50px;
-
-                &:hover {
-                    transform: skewX(10deg) scale(1.05);
-                }
-            }
+        .techSection .techGrid {
+            grid-template-columns: 1fr 1fr;
         }
     }
 
     @include media(sm) {
-        .introSection,
+        .introSection {
+            padding: 3rem 2rem 2.5rem;
+        }
+
         .techSection,
         .educationSection,
         .languagesSection,
         .contactSection,
         .experienceSection {
             padding: 2.5rem 2rem;
+        }
+
+        .techSection .techGrid {
+            grid-template-columns: 1fr 1fr;
         }
     }
 }
